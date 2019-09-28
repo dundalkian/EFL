@@ -1,4 +1,4 @@
-efl - League Tables for English Football League 
+mefl - League Tables for English Football League 
 
 ## About
 efl allows users to fetch the (hopefully) up-to-date league tables of the EFL, including the top 4 divisions currently. 
