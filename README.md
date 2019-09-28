@@ -19,4 +19,4 @@ You may also provide a shortened version of your desired division, as long as it
 
 Python3.X
 bs4
-prettytable
+ptable
