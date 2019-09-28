@@ -15,7 +15,7 @@ def substring(s):
         return options[0]
     return s
 parser = argparse.ArgumentParser(description='Fetch EFL league tables')
-parser.add_argument('league', choices=choices, type=substring)
+parser.add_argument('league', nargs='?', choices=choices, type=substring, default='EFL_Championship')
 args = parser.parse_args()
 
 
@@ -23,7 +23,7 @@ html = request.urlopen("https://en.wikipedia.org/wiki/Template:2019-20_{}_table"
 soup = BeautifulSoup(html, features="html5lib")
 table = soup.find("table", {"class" : "wikitable"})
 pretty = PrettyTable()
-pretty.title = 'Current EFL Championship League Table'
+pretty.title = 'Current {} League Table'.format(args.league.replace('_', ' '))
 pretty.field_names = ['Pos', 'Team', 'Pld', 'W', 'D', 'L', 'GF', 'GA', 'GD', 'Pts']
 pos=0
 for row in table.find_all('tr'):
