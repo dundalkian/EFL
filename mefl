@@ -19,7 +19,7 @@ parser.add_argument('league', nargs='?', choices=choices, type=substring, defaul
 args = parser.parse_args()
 
 
-html = request.urlopen("https://en.wikipedia.org/wiki/Template:2019-20_{}_table".format(args.league))
+html = request.urlopen("https://en.wikipedia.org/wiki/Template:2020-21_{}_table".format(args.league))
 soup = BeautifulSoup(html, features="html5lib")
 table = soup.find("table", {"class" : "wikitable"})
 pretty = PrettyTable()
